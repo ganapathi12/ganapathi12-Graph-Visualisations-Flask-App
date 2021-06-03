@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Home</title>
+{% endblock %}
+
+{% block body %}
+<br>
+<h1>User Defined Input</h1>
+<br>
+<main role="main">
+    <div class="jumbotron">
+        <div class="col-sm-8 mx-auto">
+            <h1>Welcome</h1>
+			{% for message in get_flashed_messages() %}
+			<p>{{ message }}</p>
+			{% endfor %}
+            <p>Welcome to our online Graph Visualizar! Here we'll be taking a Graph as an input, in the form of a file or individual nodes , and give you the requered Visualization.</p>
+			
+				<p>Input Successful</p>
+                <a class="btn btn-primary" href="/page2" role="button" style="margin-bottom: 10px">View GRAPH &raquo;</a>
+				<a class="btn btn-primary" href="/image2" role="button" style="margin-bottom: 10px">View DFS (DEPTH FIRST SEARCH TRAVERSAL) &raquo;</a>
+				<a class="btn btn-primary" href="/image4" role="button" style="margin-bottom: 10px">View BFS (Breadth FIRST SEARCH TRAVERSAL) &raquo;</a>
+				<a class="btn btn-primary" href="/table" role="button" style="margin-bottom: 10px">View Adjacency represent &raquo;</a>
+				<a class="btn btn-primary" href="/list1" role="button" style="margin-bottom: 10px">Adjacency List Representation &raquo;</a>
+            </p>
+        </div>
+    </div>
+</main>
+{% endblock %}/*

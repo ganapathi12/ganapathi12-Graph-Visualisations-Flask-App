@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Home</title>
+{% endblock %}
+
+{% block body %}
+<br>
+<h1>Home Page</h1>
+<br>
+<main role="main">
+    <div class="jumbotron">
+        <div class="col-sm-8 mx-auto">
+            <p>Welcome to our online Graph Visualizar! Here we'll be taking a Graph as an input, in the form of a file or individual nodes , and give you the requered Visualization.</p>
+			<h4>INPUT FORMAT:</h4>
+			<p>First line contains the number of nodes,say n.(Nodes are numbered as 0,1,2,...(n-1) ) Followed by n*n weighted matrix. Disconnected egdes are represented by negative weight. Last line contains the source node.(i.e, the node from which the DFS should begin)</p>
+			<p>File must be named as input.txt and it should be a text file.</p>
+				<form action = "/processing" method = "post" enctype="multipart/form-data">  
+					<input class="btn btn-primary" style="margin-bottom: 10px" type="file" name="file" />  
+					<input class="btn btn-success" style="margin-bottom: 10px" type = "submit" value="Upload">  
+				</form>
+				<h4>OR</h4>
+				<form action = "/p2" method ="post">
+					<label for="n">No. of Nodes</label>	<br>
+					<input name="nodes" type="text" id="n" /> <br>
+					<label for="v">Enter value (sourse_node,destination_node,weight):(Eg:[[0,1,10][2,3,20]...])</label>	<br>
+					<textarea name="val"></textarea>	<br>
+					<label for="s">Sourse Node</label>	<br>
+					<input name="sourse" type="text" style="margin-bottom: 10px" id="s"/>	<br>
+					<input class="btn btn-success" style="margin-bottom: 10px" type = "submit" value="Submit">
+				</form>
+                
+            </p>
+        </div>
+    </div>
+</main>
+{% endblock %}/*
